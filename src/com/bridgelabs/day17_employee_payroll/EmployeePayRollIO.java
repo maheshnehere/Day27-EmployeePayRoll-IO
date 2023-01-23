@@ -17,12 +17,12 @@ public class EmployeePayRollIO {
         name = scanner.next();
         System.out.println("Enter the salary of the employee");
         salary = scanner.nextDouble();
-        employee = new Employee(id, name, salary);
-        employees.add(employee);
+        employee = new Employee(id, name, salary); //initializing the values in eployee class using constructor
+        employees.add(employee); //adding the values of employee object to arraylist
     }
     public void write() {
         for(Employee details : employees) {
-            System.out.println(details);
+            System.out.println(details); //print all the objects stored in arraylist one by one
         }
     }
 }

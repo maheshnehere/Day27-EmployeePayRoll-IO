@@ -6,8 +6,8 @@ public class Main extends EmployeePayRollIO{
         System.out.println("Enter the number of employee payroll details you would like to add");
         int value = employeeIO.scanner.nextInt();
         for(int i = 0; i < value; i++) {
-            employeeIO.read();
+            employeeIO.read(); //this method will do the read operation
         }
-        employeeIO.write();
+        employeeIO.write(); //this method will do the write operation
     }
 }
