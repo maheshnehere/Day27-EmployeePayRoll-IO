@@ -6,8 +6,14 @@ import java.util.Scanner;
 public class EmployeePayRollService {
     EmployeePayRollIO employeePayRollIO = new EmployeePayRollIO();
     int count = 0;
+    File file = new File("C:\\Users\\Sourav Prasanna\\IdeaProjects\\Day27-EmployeePayrollFileIO\\src\\com\\bridgelabs\\day17_employee_payroll\\EmployeeParollFile.txt");
+    Scanner scanner = new Scanner(file);
+
+    public EmployeePayRollService() throws FileNotFoundException {
+    }
+
     public void writeEmployeePayroll(List<Employee> employees) throws IOException {
-        try (FileWriter fileWriter = new FileWriter("C:\\Users\\Sourav Prasanna\\IdeaProjects\\Day27-EmployeePayrollFileIO\\src\\com\\bridgelabs\\day17_employee_payroll\\EmployeeParollFile.txt")) {
+        try (FileWriter fileWriter = new FileWriter(file)) {
             for (Employee values : employees) {
                 fileWriter.write(values.toString()+"\n");
                 count++;
@@ -19,10 +25,16 @@ public class EmployeePayRollService {
         }
     }
     public void readEmployeePayroll() throws FileNotFoundException {
-        File file = new File("C:\\Users\\Sourav Prasanna\\IdeaProjects\\Day27-EmployeePayrollFileIO\\src\\com\\bridgelabs\\day17_employee_payroll\\EmployeeParollFile.txt");
-        Scanner scanner = new Scanner(file);
         while (scanner.hasNext()) {
             System.out.println(scanner.nextLine());
         }
+    }
+    public void findNumberOfEntries() {
+        while (scanner.hasNext()) {
+            while (scanner.nextLine().toLowerCase().contains("id")) {
+                count++;
+            }
+        }
+        System.out.println("Number od entries in the file are "+count);
     }
 }
