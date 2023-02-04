@@ -8,6 +8,7 @@ public class FileOperations {
     static String path;
     Scanner scanner = new Scanner(System.in);
     public FileOperations(String path) {
+
         this.path = path; //from the constructor getting the file path
     }
     public boolean isFileExists(String fileName) {

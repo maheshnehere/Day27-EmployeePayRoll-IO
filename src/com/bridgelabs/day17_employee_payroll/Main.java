@@ -6,17 +6,17 @@ import java.util.Scanner;
 public class Main extends EmployeePayRollIO{
     Scanner scanner1 = new Scanner(System.in);
     String fileName;
-    FileOperations fileOperations;
-    public void menu() throws IOException {
+    FileOperations fileOperations = new FileOperations("C:\\Users\\Sourav Prasanna\\IdeaProjects");
+    public void menu() throws IOException, InterruptedException {
         System.out.println("Menu: 1. Enter the path 2. Check file exist in given path 3. Delete a file/directory 4. Create a directory 5. Create Empty file " +
                 "6. List all files in given path 7. Exit");
+        System.out.println("Note: The default path is C:\\Users\\Sourav Prasanna\\IdeaProjects\nif you wish to add a new path enter 1");
         int option = scanner1.nextInt();
-
         switch (option) {
             case 1:
-                System.out.println("Enter the file path to be added after C:\\Users\\Sourav Prasanna");
+                System.out.println("Enter the file path to be added");
                 String path = scanner1.next();
-                fileOperations = new FileOperations("C:\\Users\\Sourav Prasanna"+"\\"+path);
+                fileOperations = new FileOperations("C:\\Users\\Sourav Prasanna\\IdeaProjects"+"\\"+path);
                 System.out.println("File path has been successfully added");
                 menu();
                 break;
@@ -52,7 +52,7 @@ public class Main extends EmployeePayRollIO{
         }
 
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
 //        Main employeeIO = new Main();
 //        System.out.println("Enter the number of employee payroll details you would like to add");
 //        int value = employeeIO.scanner.nextInt();
