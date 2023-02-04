@@ -15,7 +15,7 @@ public class Main extends EmployeePayRollIO{
         System.out.println("Menu 1. Payroll Service 2. File operation");
         int option1 = scanner1.nextInt();
         if(option1 == 1) {
-            System.out.println("Menu 1. Read from user 2. Write on Console 3. Write on File");
+            System.out.println("Menu 1. Read from user 2. Write on Console 3. Write on File 4. Read from File 5. Exit");
             int option2 = scanner1.nextInt();
             switch (option2) {
                 case 1:
@@ -32,9 +32,15 @@ public class Main extends EmployeePayRollIO{
                     menu();
                     break;
                 case 4:
+                    employeePayRollService.readEmployeePayroll();
+                    menu();
+                    break;
+                case 5:
                     System.exit(0);
                 default:
                     System.out.println("Invalid option");
+                    menu();
+                    break;
             }
         }
         else if(option1 == 2) {

@@ -1,8 +1,6 @@
 package com.bridgelabs.day17_employee_payroll;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 import java.util.Scanner;
 public class EmployeePayRollService {
@@ -18,6 +16,13 @@ public class EmployeePayRollService {
             if (employeePayRollIO.entries == count)
                 System.out.println("All entries are listed in the file");
 
+        }
+    }
+    public void readEmployeePayroll() throws FileNotFoundException {
+        File file = new File("C:\\Users\\Sourav Prasanna\\IdeaProjects\\Day27-EmployeePayrollFileIO\\src\\com\\bridgelabs\\day17_employee_payroll\\EmployeeParollFile.txt");
+        Scanner scanner = new Scanner(file);
+        while (scanner.hasNext()) {
+            System.out.println(scanner.nextLine());
         }
     }
 }
