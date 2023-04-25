@@ -1,2 +1,2 @@
-Event number: 1 Event type: ENTRY_MODIFY File affected: chumma.txt
+ Event number: 1 Event type: ENTRY_MODIFY File affected: chumma.txt
 Event number: 1 Event type: ENTRY_DELETE File affected: chumma.txt
