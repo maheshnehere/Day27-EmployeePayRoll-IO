@@ -1,0 +1,9 @@
+Employee Id: 1
+Employee Name: mahesh
+Salary: 20000.0
+Employee Id: 2
+Employee Name: Nehere
+Salary: 17000.0
+Employee Id: 3
+Employee Name: hari
+Salary: 15000.0
