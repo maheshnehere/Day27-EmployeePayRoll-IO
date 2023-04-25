@@ -1,4 +1,5 @@
 package com.bridgelabs.day17_employee_payroll;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,11 +12,17 @@ public class Main extends EmployeePayRollIO{
     EmployeePayRollIO employeePayRollIO = new EmployeePayRollIO();
     EmployeePayRollService employeePayRollService = new EmployeePayRollService();
     List<Employee> employees;
+
+
+
+    public Main() throws FileNotFoundException {
+    }
+
     public void menu() throws IOException, InterruptedException {
-        System.out.println("Menu 1. Payroll Service 2. File operation");
+        System.out.println("Menu 1. Payroll Service 2. File operation 3. Exit");
         int option1 = scanner1.nextInt();
         if(option1 == 1) {
-            System.out.println("Menu 1. Read from user 2. Write on Console 3. Write on File");
+            System.out.println("Menu 1. Read from user 2. Write on Console 3. Write on File 4. Read from File 5. Find number of entries in file 6. Exit");
             int option2 = scanner1.nextInt();
             switch (option2) {
                 case 1:
@@ -32,9 +39,19 @@ public class Main extends EmployeePayRollIO{
                     menu();
                     break;
                 case 4:
+                    employeePayRollService.readEmployeePayroll();
+                    menu();
+                    break;
+                case 5:
+                    employeePayRollService.findNumberOfEntries();
+                    menu();
+                    break;
+                case 6:
                     System.exit(0);
                 default:
                     System.out.println("Invalid option");
+                    menu();
+                    break;
             }
         }
         else if(option1 == 2) {
@@ -80,6 +97,9 @@ public class Main extends EmployeePayRollIO{
                 default:
                     System.out.println("Invalid option");
             }
+        }
+        else if(option1 == 3) {
+            System.exit(0);
         }
         else
             System.out.println("Ivalid option");
