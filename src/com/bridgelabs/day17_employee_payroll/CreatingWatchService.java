@@ -20,7 +20,6 @@ public class CreatingWatchService {
                     eventsFile.write("\nEvent number: " + (countOfEvents + 1) + " Event type: " + event.kind() + " File affected: " + event.context());
                 }
                 eventsFile.close();
-
             }
         }
     }
